@@ -7,10 +7,7 @@ def answer():
     if request.method == 'POST':
         query= request.form.get("query")
         response_text= response(query)
-        print("something is happening  here")
-        print(response_text)
         return render_template('index.html', response_text=response_text)
-    print("You are in normal position")
     return render_template('index.html',response_text=None)
 
 if __name__=='main':
