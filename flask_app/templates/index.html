@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Financial Chatbot</title>
 </head>
-<body>
-    <h1>Enter the query please: </h1>
+<body >
+    <div class="wrapper">
     <form action='/' method="POST">
-           <input type="text" name="query" placeholder="query" required> 
-           <button type="submit">Submit</button>
+       <h1>Enter the query please: </h1>
+   
+            <div class="input-box">
+           <input  type="text" name="query" placeholder="Write your query here" required> 
+            </div>
+           <button class="button" type="submit">Submit</button>
     </form>
     {% if response_text %}
-        <h2>{{response_text}}</h2>
+        <h4>{{response_text}}</h4>
         <a href="/">Go back</a>
     {% endif %}
+</div>
 </body>
 </html>
